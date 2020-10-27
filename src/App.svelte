@@ -1,7 +1,8 @@
 <script>
-  import {onMount} from 'svelte';
+  import {onMount, getContext} from 'svelte';
   let count = 0;
   onMount(() => {
+    const ctx = getContext('key');
     const interval = setInterval(() => count++, 1000);
     return () => {
       clearInterval(interval);
